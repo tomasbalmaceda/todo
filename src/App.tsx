@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, Fragment, useState } from "react";
 
-function App() {
+import { ListItem } from "./components/ListItem";
+import { AddTask } from "./components/AddTask";
+
+import { Context } from "./contexts/Context";
+
+import * as C from "./App.styles";
+
+const App = () => {
+  const { state } = useContext(Context);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <C.Container>
+      <C.GlobalStyle />
+      <C.Area>
+        <C.Header>Todo</C.Header>
+        <AddTask />
+        <C.MapContainer>
+          {state.todo.todo.map((item, index) => (
+            <Fragment key={index}>
+              <ListItem item={item} />
+            </Fragment>
+          ))}
+        </C.MapContainer>
+      </C.Area>
+    </C.Container>
   );
-}
+};
 
 export default App;
