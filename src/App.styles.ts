@@ -24,8 +24,3 @@ export const Header = styled.h1`
   padding: 0;
   color: #ffff;
 `;
-
-export const MapContainer = styled.div`
-  background-color: rgba(61, 61, 61, 0.226);
-  border-radius: 5px;
-`;

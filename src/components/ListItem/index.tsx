@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
+
 import * as C from "./styles";
+
 import { TodoType } from "../../types/TodoType";
+
 import { Context } from "../../contexts/Context";
 
 type Props = {
@@ -13,9 +16,14 @@ export const ListItem = ({ item }: Props) => {
   const onChange = (id: string, checked: boolean) => {
     const newState = state.todo.todo.map((obj) => {
       if (obj.id === id) {
-        return { id: obj.id, todo: obj.todo, boolean: checked };
+        return {
+          id: obj.id,
+          todo: obj.todo,
+          boolean: checked,
+        };
+      } else {
+        return obj;
       }
-      return obj;
     });
 
     dispatch({

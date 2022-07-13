@@ -28,6 +28,8 @@ export const AddTask = () => {
         todo: NewState,
       },
     });
+
+    setTempName("");
   };
 
   return (
@@ -37,6 +39,7 @@ export const AddTask = () => {
           placeholder="Task"
           required
           onChange={handleChange}
+          value={tempName}
         ></C.InputForm>
         <C.ButtonForm type="submit">+</C.ButtonForm>
       </C.Form>

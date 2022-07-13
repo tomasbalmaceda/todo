@@ -4,7 +4,7 @@ import {
   todoType,
   todoInitialState,
   todoReducer,
-} from "../reducers/userReducer";
+} from "../reducers/todoReducer";
 
 import { reducerActionType } from "../types/reducerActionType";
 
